@@ -1,4 +1,5 @@
 using ApiProveedores.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -13,6 +14,7 @@ namespace ApiProveedores.Controllers
     /// Controlador de proveedores, encargado de gestionar la api del proveedor
     /// </summary>
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class ProveedoresController : ControllerBase
     {
