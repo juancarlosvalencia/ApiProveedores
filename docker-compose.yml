@@ -4,7 +4,7 @@ services:
     image: api-proveedores
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: .\ApiProveedores\Dockerfile
     ports:
       - "5000:80"
     depends_on:
