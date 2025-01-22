@@ -1,7 +1,7 @@
 ﻿version: '3.9'
 services:
   my-api:
-    image: compliment-generator-api
+    image: api-proveedores
     build:
       context: .
       dockerfile: Dockerfile

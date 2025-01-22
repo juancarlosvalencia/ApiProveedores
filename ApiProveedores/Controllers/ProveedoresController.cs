@@ -97,11 +97,11 @@ namespace ApiProveedores.Controllers
         /// <param name="updatedBook">Objeto que contiene los datos del proveedor</param>
         /// <returns>El proveedor actualizado/returns>
         [HttpPut]
-        public async Task UpdateAsync(string id, Proveedor updatedBook)
+        public async Task UpdateAsync([FromBody]Proveedor proveedor)
         {
             try
             {
-                await _proveedoresCollection.ReplaceOneAsync(x => x.Nit == id, updatedBook);
+                await _proveedoresCollection.FindOneAndReplaceAsync(x => x.Nit == proveedor.Nit, proveedor);
             }
             catch (Exception)
             {
